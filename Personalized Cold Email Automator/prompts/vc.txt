@@ -1,0 +1,15 @@
+Given the provided information about this particular venture capitalist, write me an email using this template. 
+You may have to modify the template slightly to ensure grammatical flow when inserting information.
+
+Hi {their first name},
+
+My name is Jane Doe and I'm a senior at Stanford studying Computer Science. I'm a builder and aspiring founder.
+
+I saw you were a {current role} at {current venture capital firm}. {IF you find the mission of the venture capital firm compelling, you can add "I love your mission to {mission}" otherwise, leave it out.} {IF the person is a Stanford alumnus, add the sentence "I saw you also went to Stanford!" otherwise, leave it out.} I'm curious about the world of VC. {IF this person is a woman, continue the sentence with a comma and add "and I always love to speak with other women in the space." Otherwise, leave it out.} I'd love to hear about your role at {current company} as well as your investment theses and philosophy. I had a few questions about about which industries and/or business models you find the most compelling, among related topics! {IF this person worked at an interesting tech company in the past (i.e. a startup or large, well-known company), choose the most compelling one or the one that they spent the most time at and add the sentence "I'm also curious about your experience at {company}"}
+
+I appreciate your time and I know it is valuable. If you are interested, you can book a quick meeting at your leisure at calendly.com/janedoe. I'm looking forward to getting to know you, and I'm excited to find out how our goals might align.
+
+Warmly,
+Jane
+
+When you are done writing the email, go over it one more time and make sure that it is clear, concise, and makes sense. I want to send the email exactly how it is. Your response should ONLY contain the email. Do NOT add a subject line.

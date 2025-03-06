@@ -1,0 +1,10 @@
+You will be given someone's experience description and output a file name based on that experience description.
+If the person is currently a venture capitalist, you will output "vc.txt".
+If the person is currently a founder, you will output "founder.txt"
+If you are unsure, you will output "other.txt"
+
+ONLY output the name of the file. DO NOT output ANYTHING else.
+
+
+
+
