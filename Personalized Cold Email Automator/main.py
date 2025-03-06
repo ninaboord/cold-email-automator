@@ -11,9 +11,8 @@ MY_UNIVERSITY = "Stanford"                     # University to check alumni stat
 SUBJECT_LINE = "Stanford student reaching out" # Default subject line for emails
 MULTIPLE_PROMPTS = True                        # Flag to determine prompt selection method
 PROMPT_FILE = 'vc.txt'                         # Prompt file if MULTIPLE_PROMPTS is False
-SMALLER_MODEL = 'gpt-3.5-turbo'                # Model for simple tasks (can be any gpt model)
-MEDIUM_MODEL = 'gpt-4o'                        # Model for general tasks, ideally can look things up on the internet
-LARGER_MODEL = 'o1-mini'                       # Model for writing an email (can be any gpt model)
+SIMPLE_MODEL = '4o-mini'                       # Model for simple tasks
+LARGER_MODEL = 'o1-mini'                       # Model for writing an emai
 
 
 class Person:
@@ -245,7 +244,7 @@ def is_female_name(first_name):
             f"Is the name '{first_name}' typically female? "
             "Respond with 'True' if it is female, and 'False' if it is male or if the gender of the name is ambiguous."
         )
-        model = SMALLER_MODEL
+        model = SIMPLE_MODEL
         system_prompt = {"role": "system", "content": sys_prompt}
         response = client.chat.completions.create(model=model, messages=[system_prompt])
         answer = response.choices[0].message.content.strip().lower()
@@ -276,7 +275,7 @@ def get_mission(company):
             "Respond with ONLY the mission of this company in the format 'to __'. Be specific. "
             "If you are unsure, respond only with 'False'"
         )
-        model = MEDIUM_MODEL
+        model = SIMPLE_MODEL
         system_prompt = {"role": "system", "content": sys_prompt}
         response = client.chat.completions.create(model=model, messages=[system_prompt])
         answer = response.choices[0].message.content.strip().lower()
@@ -305,7 +304,7 @@ def get_prompt(person_summary):
         # Read the content of the prompt selection file
         with open(prompt_selection_file, 'r') as file:
             sys_prompt_content = file.read()
-        model = MEDIUM_MODEL
+        model = SIMPLE_MODEL
         system_prompt = {"role": "system", "content": sys_prompt_content}
         user_prompt = {"role": "user", "content": person_summary}
         response = client.chat.completions.create(model=model, messages=[system_prompt, user_prompt])

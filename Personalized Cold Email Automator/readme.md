@@ -79,6 +79,7 @@ At the top of the script, you'll find key configuration variables:
 - **`SUBJECT_LINE`**: Default subject line for emails (can be customized).
 - **`MULTIPLE_PROMPTS`**: Boolean flag to select prompts dynamically or use a default prompt.
 - **`PROMPT_FILE`**: Fallback prompt file if `MULTIPLE_PROMPTS` is set to `False`.
+- **`SIMPLE_MODEL`** and **`LARGER_MODEL`**: Choose whichever openai models you would like to use. **`SMALLER_MODEL`** will handle simpler function tasks, while **`LARGER_MODEL`** will handle the email writing. Up to you which model to use, but make sure you use valid aliases specified on openai's API website if you decide to change them.
 
 ---
 
@@ -92,6 +93,59 @@ At the top of the script, you'll find key configuration variables:
 - Use clear and specific language.
 - Include instructions on which LinkedIn details to reference.
 - Test different prompts to optimize email output.
+
+The script comes with examples in the prompts folder. You should modify them to suit your cold emailing needs. The reason why this tool uses templates is to ensure the email sounds like it was written like you -- not AI. You can use the following information in your prompt, as the AI is given the following information from the person's LinkedIn profile:
+
+- First name
+- Last name
+- Headline
+- Location
+- About
+- Education (school, degree, and field)
+- Current company
+- Current role/title
+- Current company mission (note this is GPT generated based on the company, so it may be less accurate for startups)
+- Current company description (from the company's page on LinkedIn)
+- Past experience (companies and their roles)
+- Gender (note that this is GPT generated based on their name, so if they have a nontraditional male/female name this could be incorrect)
+- Whether or not they are an alumni (based off of the school you specifiy under **`MY_UNIVERSITY`**:)
+
+    def __init__(self):
+        # Basic personal information
+        self.first = ""
+        self.last = ""
+        self.headline = ""
+        self.location = ""
+        self.about = ""
+        # Containers for additional data
+        self.domains = []
+        self.education = []
+        self.current_job = []
+        self.past_experience = []
+        self.emails = []
+        # Boolean flags
+        self.female = False
+        self.alumni = False
+
+    class Experience:
+        """
+        A nested class to represent work experience.
+        """
+        def __init__(self):
+            self.company = ""
+            self.title = ""
+            self.industry = ""
+            self.description = ""
+            self.mission = ""
+
+    class Education:
+        """
+        A nested class to represent education details.
+        """
+        def __init__(self):
+            self.school = ""
+            self.degree = ""
+            self.field = ""
 
 ---
 
@@ -112,7 +166,7 @@ Run the script directly from the terminal:
 python entire/path/to/main.py
 ```
 
-### Optional: Creating a Bash/Zsh Alias
+### Optional but Reccomended: Creating a Bash/Zsh Alias
 
 To simplify execution, add an alias to your `.bashrc` or `.zshrc`:
 
