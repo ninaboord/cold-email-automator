@@ -159,4 +159,6 @@ Now, simply type `email` in the terminal to run the tool.
 - **Email Sending**: Ensure you are logged into Apple Mail with your sending account before running the script.
 - **No Code Changes Needed**: Modify only the configuration and prompt files; the script runs as-is.
 
+> **Note:** There may be variability with email accuracy, especially if you are utilizing aspects like gender or company mission in your emails that are not explicit on LinkedIn. The quality of your prompts will greatly reduce errors (so pay attention to the prompt examples) but it is reccomended to **always** skim your email before hitting send.
+
 Enjoy automating your cold emails!
