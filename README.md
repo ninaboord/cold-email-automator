@@ -32,7 +32,7 @@ Set these environment variables in a **.env** file (see instructions below).
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/cold-emailer.git
+git clone https://github.com/ninaboord/cold-email-automator.git
 cd cold-emailer
 ```
 
